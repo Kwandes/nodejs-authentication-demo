@@ -1,11 +1,24 @@
 import express, { json } from "express";
+import { AuthRouter } from "./authentication/auth.routes.js";
+import { logger } from "./middlewares/logging.middleware.js";
 
 const app = express();
+
+// Add ability to read request bodies as JSON
 app.use(json());
+app.use(logger);
+
 
 app.get("/", function (_req, res) {
-  console.log("Request body", _req.body);
   res.status(418).send({ message: `I'm alive!!` });
+});
+
+app.all("/*", (req, res) => {
+  res.status(404).send({
+    statusCode: 404,
+    message: `Cannot ${req.method} ${req.url}`,
+    error: "Not Found",
+  });
 });
 
 app.listen(3000, function () {
