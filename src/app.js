@@ -1,8 +1,10 @@
-import express from "express";
+import express, { json } from "express";
 
 const app = express();
+app.use(json());
 
 app.get("/", function (_req, res) {
+  console.log("Request body", _req.body);
   res.status(418).send({ message: `I'm alive!!` });
 });
 
