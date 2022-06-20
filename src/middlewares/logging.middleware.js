@@ -20,7 +20,7 @@ let logger = (req, res, next) => {
     const durationInMilliseconds =
       getActualRequestDurationInMilliseconds(start);
     let status = res.statusCode;
-    let log = `[${formatted_date}]\t ${method} '${url}' ${status} ${durationInMilliseconds.toLocaleString()} ms`;
+    let log = `[${formatted_date}]\t[DEBUG] ${method} '${url}' ${status} ${durationInMilliseconds.toLocaleString()} ms`;
     console.debug(log);
   });
 };

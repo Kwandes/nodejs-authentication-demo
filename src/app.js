@@ -1,6 +1,7 @@
 import express, { json } from "express";
 import { AuthRouter } from "./authentication/auth.routes.js";
 import { logger } from "./middlewares/logging.middleware.js";
+import { UsersRouter } from "./users/users.routes.js";
 
 const app = express();
 
@@ -8,6 +9,7 @@ const app = express();
 app.use(json());
 app.use(logger);
 
+app.use("/users", UsersRouter);
 
 app.get("/", function (_req, res) {
   res.status(418).send({ message: `I'm alive!!` });
