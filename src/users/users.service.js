@@ -2,12 +2,12 @@ let users = [
   {
     userId: 1,
     email: "admin@example.com",
-    password: "mockPass",
+    password: "$2b$10$cWFb2HLWjCWrESTvwpWoeu6avHR5JdkrG./q08CcByUTwdfs/VA3a", // abcDEF123
   },
   {
     userId: 2,
     email: "user@example.com",
-    password: "mockPass",
+    password: "$2b$10$cWFb2HLWjCWrESTvwpWoeu6avHR5JdkrG./q08CcByUTwdfs/VA3a", // abcDEF123
   },
 ];
 

@@ -9,6 +9,7 @@ const app = express();
 app.use(json());
 app.use(logger);
 
+app.use("/auth", AuthRouter);
 app.use("/users", UsersRouter);
 
 app.get("/", function (_req, res) {
